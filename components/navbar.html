@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+    <a class="navbar-brand" href="../index.html">Movie Web App</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb"
+        aria-expanded="true">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navb" class="navbar-collapse collapse hide">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="../popular.html">Popular</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../toprated.html">Top Rated</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../upcoming.html">Up Coming</a>
+            </li>
+        </ul>
+
+        <ul class="nav navbar-nav ml-auto" id="left-panel"></ul>
+    </div>
+</nav>
+
+<script>
+    if (window.localStorage.getItem('user')) {
+        const user = JSON.parse(window.localStorage.getItem('user'))
+        $('#left-panel').html(
+            `
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="userBtn">${user.email}
+                    <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                <li><a href="../favorites.html">Favorites</a></li>
+                </ul>
+            </div>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="logOut()">Log Out</a>
+            </li>
+            `
+        )
+    } else {
+        $('#left-panel').html(
+            `<li class="nav-item">
+                <a class="nav-link" href="../register.html"><span class="fas fa-user"></span> Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="../login.html"><span class="fas fa-sign-in-alt"></span> Login</a>
+            </li>`
+        )
+    }
+</script>

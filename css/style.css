@@ -1,0 +1,27 @@
+#popular-movies, #top-rated-movies, #upcoming-movies, #search-moviesi, #favorite-movies {
+    margin-top: 2%;
+}
+
+.text-left{
+    margin-left: 13%;
+    margin-bottom: 2%;
+    
+}
+
+.movieDiv {
+    margin-top: 2%;
+}
+
+.jumbotron {
+    background-color: white;
+    margin-top: 5%;
+}
+
+#userBtn {
+    background-color: transparent;
+    border: none;
+}
+
+#userBtn:hover {
+    background-color: transparent;
+}
